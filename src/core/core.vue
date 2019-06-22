@@ -1,6 +1,6 @@
 <template>
   <div id="core" class="container-fluid">
-    <div class="row core-content">
+    <div class="row flex-nowrap flex-column core-content">
       <core-navigation></core-navigation>
       <router-view class="core-page"/>
       <core-footer></core-footer>

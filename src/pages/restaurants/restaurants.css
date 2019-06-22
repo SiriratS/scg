@@ -1,0 +1,11 @@
+.restaurants {
+    flex-direction: column;
+}
+
+.restaurants .open-now {
+    color: green;
+}
+
+.restaurants .close-now {
+    color: red;
+}

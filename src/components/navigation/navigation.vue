@@ -9,7 +9,7 @@
             <router-link to="/">SCG</router-link>
           </b-nav-item>
           <b-nav-item>
-            <router-link to="/restaurants">Restaurants</router-link>
+            <router-link to="/restaurants">Bangsue Restaurants</router-link>
           </b-nav-item>
           <b-nav-item>
             <router-link to="/cv">My CV</router-link>
