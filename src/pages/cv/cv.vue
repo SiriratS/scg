@@ -1,5 +1,5 @@
 <template>
-  <div class="cv">
+  <div class="cv" v-once>
     <iframe src="https://drive.google.com/file/d/0B9s0la2eaNcGSkZHeFoxSVZnLXRwcjhsTW1YeDlnMmZvWEZj/preview"></iframe>
   </div>
 </template>

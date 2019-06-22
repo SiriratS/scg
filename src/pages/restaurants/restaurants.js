@@ -1,6 +1,8 @@
-import GooglePlaceAdapter from '../../services/adapter/google-place.js'
+import PlaceService from '../../services/place-service.js'
 
 const API_KEY = 'AIzaSyAEx2ZxpGI9MuwRTTCKPCo5kYKOUMggO38'
+
+const placeService = new PlaceService();
 
 export default {
     name: 'restaurants',
@@ -20,37 +22,50 @@ export default {
 
         this.busy = true;
 
-        GooglePlaceAdapter
-          .get('textsearch/json', {
-            params: {
-              key: API_KEY,
-              query: 'บางแสน',
-              types: 'restaurant',
-              pagetoken: this.nextPageToken  
-            }
-          })
-          .then(response => { 
-            this.nextPageToken = response.data.next_page_token ? response.data.next_page_token : null
-            this.results = this.results.concat(response.data.results)
-            this.busy = false;
-          })
-          .catch(err => err)
+        // GooglePlaceAdapter
+        //   .get('textsearch/json', {
+        //     params: {
+        //       key: API_KEY,
+        //       query: 'บางแสน',
+        //       types: 'restaurant',
+        //       pagetoken: this.nextPageToken  
+        //     }
+        //   })
+        //   .then(response => { 
+        //     this.nextPageToken = response.data.next_page_token ? response.data.next_page_token : null
+        //     this.results = this.results.concat(response.data.results)
+        //     this.busy = false;
+        //   })
+        //   .catch(err => err)
       }
     },
-    mounted () {
-      GooglePlaceAdapter
-        .get('textsearch/json', {
-          params: {
-            key: API_KEY,
-            query: 'บางแสน',
-            types: 'restaurant'
-          }
+    mounted (){
+        let result = placeService.getFromLocal({
+          query: 'บางแสน',
+          types: 'restaurant'
+        });
+
+        if(result) {
+          const response = JSON.parse(result);
+          this.nextPageToken = response.data.next_page_token;
+          this.results = response.data.results;  
+          return;
+        }
+
+        placeService.search({
+          query: 'บางแสน',
+          types: 'restaurant'
         })
-        .then(response => { 
-          this.nextPageToken = response.data.next_page_token ? response.data.next_page_token : null
-          this.results = response.data.results
-        })
-        .catch(err => err)
-    },
-    
+        .then(response => {
+          placeService.setToLocal(
+            {
+              query: 'บางแสน',
+              types: 'restaurant'
+            },
+            response
+          );
+          this.nextPageToken = response.data.next_page_token;
+          this.results = response.data.results;     
+        });      
+    }   
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="scg">
+  <div class="scg" v-once>
     <div class="result">
       <h1>The Result is</h1>
       <p>{{ results }}</p> 

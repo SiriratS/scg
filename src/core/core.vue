@@ -1,9 +1,9 @@
 <template>
   <div id="core" class="container-fluid">
     <div class="row flex-nowrap flex-column core-content">
-      <core-navigation></core-navigation>
+      <core-navigation v-once></core-navigation>
       <router-view class="core-page"/>
-      <core-footer></core-footer>
+      <core-footer v-once></core-footer>
     </div>
   </div>
 </template>
