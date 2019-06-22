@@ -1,0 +1,21 @@
+.navigation {
+    display: flex;
+    flex: 0 auto;
+    flex-direction: column;
+}
+
+.navigation a {
+    color: white;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.navbar-brand a:hover {
+    text-decoration: none;
+}
+
+.nav-item a.router-link-exact-active {
+    text-decoration: underline;
+}

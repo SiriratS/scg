@@ -1,0 +1,13 @@
+.scg {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.result {
+  align-self: center;
+}
+
+.result p {
+  text-align: center;
+}

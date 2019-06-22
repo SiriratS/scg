@@ -1,6 +1,3 @@
 export default {
-    name: 'home',
-    props: {
-      msg: String
-    }
+    name: 'home'
 }

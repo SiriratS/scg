@@ -1,8 +1,10 @@
 <template>
-  <div id="core">
-    <core-navigation></core-navigation>
-    <router-view/>
-    <core-footer></core-footer>
+  <div id="core" class="container-fluid">
+    <div class="row core-content">
+      <core-navigation></core-navigation>
+      <router-view/>
+      <core-footer></core-footer>
+    </div>
   </div>
 </template>
 

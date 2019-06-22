@@ -1,5 +1,7 @@
 <template>
-  <div class="footer">Footer</div>
+  <div class="footer">
+    <span>Copyright © 2019 By Sirirat Saemak</span>
+  </div>
 </template>
 
 <script src='./footer.js'></script>

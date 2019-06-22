@@ -1,0 +1,9 @@
+#core {
+    display: flex;
+    height: 100vh;
+}
+
+.core-content {
+    flex-direction: column;
+    flex: 1;
+}
