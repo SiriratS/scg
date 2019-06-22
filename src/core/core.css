@@ -1,9 +1,14 @@
 #core {
-    display: flex;
-    height: 100vh;
+  display: flex;
+  height: 100vh;
 }
 
 .core-content {
-    flex-direction: column;
-    flex: 1;
+  flex-direction: column;
+  flex: 1;
+}
+
+.core-page {
+  display: flex;
+  flex: 1;
 }

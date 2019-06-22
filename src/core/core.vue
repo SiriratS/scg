@@ -2,7 +2,7 @@
   <div id="core" class="container-fluid">
     <div class="row core-content">
       <core-navigation></core-navigation>
-      <router-view/>
+      <router-view class="core-page"/>
       <core-footer></core-footer>
     </div>
   </div>
