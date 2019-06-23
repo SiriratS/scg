@@ -1,7 +1,7 @@
 import GooglePlaceAdapter from './adapter/google-place.js'
 
 export default class PlaceService {
-  API_KEY = '[YOUR_KEY]'
+  API_KEY = 'YOUR_KEY';
   LOCATION_KEY = 'PLACE';
   
 search(params) {
@@ -14,6 +14,10 @@ search(params) {
             pagetoken: params.pagetoken
           }
         });
+  }
+  
+  getPhotoEndPoint() {
+    return 'https://maps.googleapis.com/maps/api/place/photo?maxheight=300&maxwidth=300&key=' + this.API_KEY + '&photoreference=';
   }
 
   matchKey(params) {
